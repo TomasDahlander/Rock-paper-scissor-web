@@ -10,8 +10,8 @@ $(document).ready(function(){
         let npc;
 
     $(".adjust-button").click(function(){
-        $leftSign.attr("src", (`/images/rock-from-left.png`));
-        $rightSign.attr("src", (`/images/rock-from-right.png`));
+        $leftSign.attr("src", (`images/rock-from-left.png`));
+        $rightSign.attr("src", (`images/rock-from-right.png`));
         npc = getNpcChoice(3);
         player = $(this).val();
         animateShake().promise().done(checkResults);
@@ -28,8 +28,8 @@ $(document).ready(function(){
     }
 
     function checkResults(){
-        $leftSign.attr("src", (`/images/${player}-from-left.png`));
-    $rightSign.attr("src", (`/images/${npc}-from-right.png`));
+        $leftSign.attr("src", (`images/${player}-from-left.png`));
+    $rightSign.attr("src", (`images/${npc}-from-right.png`));
 
         if(player === npc){
 
