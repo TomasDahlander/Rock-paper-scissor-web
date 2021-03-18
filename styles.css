@@ -1,0 +1,12 @@
+.adjust-panel {
+  border-style: solid;
+  font-size: 3rem;
+}
+
+.adjust-button {
+  padding: 20px 40px;
+  border-radius: 25px;
+  width: 150px;
+  margin: 20px 0px;
+  font-size: 1.5rem;
+}
