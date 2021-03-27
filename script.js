@@ -6,15 +6,15 @@ $(document).ready(function(){
         const $rightSign = $("#rightSign");
         const $playerScore = $("#playerScore");
         const $npcScore = $("#npcScore");
-        let player;
-        let npc;
 
     $(".adjust-button").click(function(){
         $leftSign.attr("src", (`./images/rock-from-left.png`));
         $rightSign.attr("src", (`./images/rock-from-right.png`));
-        npc = getNpcChoice(3);
-        player = $(this).val();
-        animateShake().promise().done(checkResults);
+        const npc = getNpcChoice(3);
+        const player = $(this).val();
+        animateShake().promise().done(function () {
+            checkResults(player, npc);
+        });
     });
 
     function animateShake(){
@@ -27,7 +27,7 @@ $(document).ready(function(){
         .animate({paddingTop: "50px", paddingBottom: "20px"},200);
     }
 
-    function checkResults(){
+    function checkResults(player, npc){
         $leftSign.attr("src", (`./images/${player}-from-left.png`));
     $rightSign.attr("src", (`./images/${npc}-from-right.png`));
 
