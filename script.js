@@ -75,6 +75,7 @@ $(document).ready(function(){
         }
     }
 
+    
 
     function getNpcChoiceImpossible(player){
         switch(player){
