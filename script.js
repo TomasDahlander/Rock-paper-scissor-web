@@ -7,6 +7,9 @@ $(document).ready(function(){
         const $playerScore = $("#playerScore");
         const $npcScore = $("#npcScore");
 
+        // Difficulties = Normal, Hardcore, Impossible
+        const difficulty = "Normal";
+
     $(".adjust-button").click(function(){
         $leftSign.attr("src", (`./images/rock-from-left.png`));
         $rightSign.attr("src", (`./images/rock-from-right.png`));
