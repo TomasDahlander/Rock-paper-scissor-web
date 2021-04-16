@@ -39,11 +39,9 @@ $(document).ready(function(){
 
     function checkResults(player, npc){
         $leftSign.attr("src", (`./images/${player}-from-left.png`));
-    $rightSign.attr("src", (`./images/${npc}-from-right.png`));
+        $rightSign.attr("src", (`./images/${npc}-from-right.png`));
 
-        if(player === npc){
-
-        }
+        if(player === npc){}
         else if(player === "rock" && npc === "scissor"){
             let nr = Number($playerScore.text());
             $playerScore.text(++nr);
