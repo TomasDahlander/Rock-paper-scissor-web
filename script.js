@@ -8,13 +8,23 @@ $(document).ready(function(){
         const $npcScore = $("#npcScore");
 
         // Difficulties = Normal, Hardcore, Impossible
-        const difficulty = "Normal";
+        let difficulty = "Normal";
 
     $(".adjust-button").click(function(){
         $leftSign.attr("src", (`./images/rock-from-left.png`));
         $rightSign.attr("src", (`./images/rock-from-right.png`));
-        const npc = getNpcChoice(3);
         const player = $(this).val();
+        let npc;
+        if(difficulty === 'Normal') npc = getNpcChoice(3);
+        else if(difficulty === 'Hardcore') npc = getNpcChoice(3);
+        else npc = getNpcChoiceImpossible(player);
+
+     //   switch(difficulty){
+     //       case "Normal": npc = getNpcChoice(3);
+     //       case "Hardcore": npc = getNpcChoice(3);
+     //       case "Impossible": npc = getNpcChoiceImpossible(player);
+     //   }
+
         animateShake().promise().done(function () {
             checkResults(player, npc);
         });
@@ -70,5 +80,20 @@ $(document).ready(function(){
             case 1: return "paper";
             case 2: return "scissor";
         }
-    }  
+    }
+
+
+    function getNpcChoiceImpossible(player){
+        switch(player){
+            case "rock": return "paper";
+            case "paper": return "scissor";
+            case "scissor": return "rock";
+        }
+    
+    }
+    
+    $(".radio-input").click(function(){
+        difficulty = $(this).val();
+        console.log(difficulty);
+    })
 });
