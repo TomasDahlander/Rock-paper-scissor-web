@@ -2,6 +2,7 @@ $(document).ready(function(){
         // rock = 0
         // paper = 1
         // scissor = 2
+
         const $leftSign = $("#leftSign");
         const $rightSign = $("#rightSign");
         const $playerScore = $("#playerScore");
@@ -9,6 +10,8 @@ $(document).ready(function(){
 
         // Difficulties = Normal, Hardcore, Impossible
         let difficulty = "Normal";
+
+        // Skapa lista för vad som ska kontrolleras vid Hardcore mode och skriv funktionen som läser igenom denna
 
     $(".adjust-button").click(function(){
         $leftSign.attr("src", ('./images/rock-from-left.png'));
@@ -75,7 +78,9 @@ $(document).ready(function(){
         }
     }
 
-    
+    function getNpcChoiceHardcore(){
+        
+    }
 
     function getNpcChoiceImpossible(player){
         switch(player){
