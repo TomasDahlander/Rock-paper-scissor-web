@@ -14,6 +14,7 @@ $(document).ready(function(){
         // Skapa lista för vad som ska kontrolleras vid Hardcore mode och skriv funktionen som läser igenom denna
 
     $(".adjust-button").click(function(){
+        $(".adjust-button").attr("disabled",true);
         $leftSign.attr("src", ('./images/rock-from-left.png'));
         $rightSign.attr("src", ('./images/rock-from-right.png'));
         const player = $(this).val();
@@ -67,6 +68,7 @@ $(document).ready(function(){
             let nr = Number($npcScore.text());
             $npcScore.text(++nr);
         }
+        $(".adjust-button").attr("disabled",false);
     }
 
     function getNpcChoiceNormal(){
