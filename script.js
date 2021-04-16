@@ -11,20 +11,13 @@ $(document).ready(function(){
         let difficulty = "Normal";
 
     $(".adjust-button").click(function(){
-        $leftSign.attr("src", (`./images/rock-from-left.png`));
-        $rightSign.attr("src", (`./images/rock-from-right.png`));
+        $leftSign.attr("src", ('./images/rock-from-left.png'));
+        $rightSign.attr("src", ('./images/rock-from-right.png'));
         const player = $(this).val();
         let npc;
-        if(difficulty === 'Normal') npc = getNpcChoice(3);
-        else if(difficulty === 'Hardcore') npc = getNpcChoice(3);
+        if(difficulty === 'Normal') npc = getNpcChoiceNormal();
+        else if(difficulty === 'Hardcore') npc = getNpcChoiceNormal();
         else npc = getNpcChoiceImpossible(player);
-
-     //   switch(difficulty){
-     //       case "Normal": npc = getNpcChoice(3);
-     //       case "Hardcore": npc = getNpcChoice(3);
-     //       case "Impossible": npc = getNpcChoiceImpossible(player);
-     //   }
-
         animateShake().promise().done(function () {
             checkResults(player, npc);
         });
@@ -73,8 +66,8 @@ $(document).ready(function(){
         }
     }
 
-    function getNpcChoice(max){
-        const nr = Math.floor(Math.random() * Math.floor(max));
+    function getNpcChoiceNormal(){
+        const nr = Math.floor(Math.random() * Math.floor(3));
         switch(nr){
             case 0: return "rock";
             case 1: return "paper";
