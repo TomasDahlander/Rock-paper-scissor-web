@@ -93,6 +93,5 @@ $(document).ready(function(){
     
     $(".radio-input").click(function(){
         difficulty = $(this).val();
-        console.log(difficulty);
     })
 });
